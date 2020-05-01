@@ -28,17 +28,19 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 ```{r sheets_setup}
-# Authentication > create personal API credentials.
-
-# gs_auth(new_user = TRUE)
-
+# Authentication.
+# googlesheets4::sheets_auth()
 ```
 
 
 
 ```{r sheets_transfer}
-# Transfer Google Sheet data to R format > with read_excel or googlesheets?
+# Transfer Google Sheet data to R format.
 
+# Get sheet ID.
+suds_sheet_id <- as_sheets_id("https://docs.google.com/spreadsheets/d/1ksTM0D3cH6rysKkroHZ0zMDsahjQEAr-dlW_2I-G06Y/edit#gid=597242846")
 
+# Read sheet.
+survey_responses <- read_sheet(suds_sheet_id)
 ```
 
