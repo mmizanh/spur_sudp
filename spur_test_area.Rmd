@@ -44,3 +44,110 @@ suds_sheet_id <- as_sheets_id("https://docs.google.com/spreadsheets/d/1ksTM0D3cH
 survey_responses <- read_sheet(suds_sheet_id)
 ```
 
+
+
+```{r col_listsetup}
+# Make list of new column names.
+
+col_lst<- c("timestamp", 
+            "email_address", 
+            "surveyor_name", 
+            "data_inputter_name",
+            "date", 
+            "time", 
+            "day", 
+            "business_name", 
+            "business_address", 
+            "on_premise_seating", 
+           "served_countertable", 
+            "paid_countertable", 
+            "batch_or_jic", 
+            "chain", 
+            "operating_hrs", 
+            "business_type", 
+            "num_indoor_seating", 
+            "num_outdoor_seating", 
+            "num_selfserve", 
+            "stirrer", 
+            "straws", 
+            "hot_lids", 
+            "cold_lids", 
+            "spill_protector", 
+            "sleeve", 
+            "utensils", 
+            "packets", 
+            "bulk", 
+            "num_bussing", 
+            "num_compost", 
+            "num_recycling", 
+            "num_landfill", 
+            "bin_signage", 
+            "num_employees", 
+            "num_customers_served", 
+            "num_customers_waiting", 
+            "num_customers_inline", 
+            "ask_here_takeout", 
+            "here_bev_reusable", 
+            "here_food_reusable", 
+            "takeout_ask_suds", 
+            "takeout_reusable", 
+            "takeout_reusable_pricediff_yn", 
+            "takeout_reusable_pricediff", 
+            "suds_auto", 
+            "suds_request", 
+            "takeout_options", 
+            "drink_price", 
+            "receipt_auto_req", 
+            "receipt_type", 
+            "receipt_charge", 
+            "free_water", 
+            "watercup_type", 
+            "cent_charge", 
+            "num_hotcups", 
+            "num_coldcups", 
+            "num_plasticcups", 
+            "num_comp_plasticcups", 
+            "num_paperfiber_noncomp_cups", 
+            "num_paperfiber_compcups", 
+            "num_other_cups", 
+            "num_reusable_hardplasticcups", 
+            "num_reusable_ceramiccups", 
+            "num_reusable_glasscups", 
+            "num_reusable_steelcups", 
+            "num_reusable_customermugs", 
+            "num_reusable_cupservice", 
+            "num_reusable_other", 
+            "compostable_cup_brand", 
+            "reusable_cup_service", 
+            "num_jit", 
+            "num_premade", 
+            "num_containers_plastic", 
+            "num_containers_compplastic", 
+            "num_containers_paperfiber_noncomp", 
+            "num_containers_paperfiber_comp", 
+            "num_reusablecontainers_hardplastic", 
+            "num_reusablecontainers_ceramic", 
+            "num_reusablecontainers_glass", 
+            "num_reusablecontainers_steel", 
+            "num_reusablecontainers_other", 
+            "compostable_container_brand", 
+            "clamshell", 
+            "side_dish", 
+            "container_solid", 
+            "container_liquid", 
+            "container_folding", 
+            "container_wrap", 
+            "add_ins")
+```
+
+
+
+```{r rename_columns}
+# Rename with loop.
+
+for(i in 1:89) {
+  names(survey_responses)[i] <- col_lst[i]
+}
+```
+
+
